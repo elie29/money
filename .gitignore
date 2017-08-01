@@ -7,3 +7,6 @@ build/phpdox
 build/testdox
 cache.properties
 .idea
+/.settings/
+/.project
+/.buildpath
