@@ -5,8 +5,11 @@ build/logs
 build/pdepend
 build/phpdox
 build/testdox
+build/phpcb
 cache.properties
 .idea
 /.settings/
 /.project
 /.buildpath
+/vendor/
+/composer.lock
