@@ -19,9 +19,12 @@
       <log type="coverage-html" target="coverage" />
       <log type="coverage-clover" target="logs/clover.xml" />
       <log type="coverage-crap4j" target="logs/crap4j.xml" />
-      <log type="coverage-xml" target="logs/coverage" />
       <log type="junit" target="logs/junit.xml" />
-      <log type="testdox-html" target="logs/index.html" />
+      <!--
+      NOT NEEDED FOR THE MOMENT  
+      <log type="coverage-xml" target="logs/coverage" />
+      <log type="testdox-html" target="logs/index.html" /> 
+      -->
    </logging>
 
    <filter>

@@ -98,6 +98,7 @@
    <target name="pdepend" unless="pdepend.done" depends="prepare" description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
       <exec executable="${pdepend}" taskname="pdepend">
          <arg value="--jdepend-xml=${basedir}/build/logs/pdepend.xml" />
+         <!-- summary.xml is not needed for jenkins -->
          <arg value="--summary-xml=${basedir}/build/logs/summary.xml" />
          <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
          <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
