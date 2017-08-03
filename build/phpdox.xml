@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpdox xmlns="http://xml.phpdox.net/config">
-    <project name="Money" source="${basedir}/../src" workdir="${basedir}/phpdox/cache">
-        <collector publiconly="false">
-            <include mask="*.php" />
-            <exclude mask="*autoload.php" />
-        </collector>
+   <project name="Money" source="${basedir}/../src" workdir="${basedir}/phpdox/cache">
+      <collector publiconly="false">
+         <include mask="*.php" />
+         <exclude mask="*autoload.php" />
+      </collector>
 
-        <generator output="${basedir}/api/docs">
+      <generator output="${basedir}/phpdox">
 
-            <enrich base="${basedir}/logs">
-                <source type="build"/>
-                <source type="git"/>
-                <source type="checkstyle"/>
-                <source type="pmd"/>
-                <source type="phploc"/>
-                <source type="phpunit">
-                    <coverage path="coverage"/>
-                </source>
-            </enrich>
+         <enrich base="${basedir}/logs">
+            <source type="build" />
+            <source type="git" />
+            <source type="checkstyle" />
+            <source type="pmd" />
+            <source type="phploc" />
+            <source type="phpunit">
+               <coverage path="coverage" />
+            </source>
+         </enrich>
 
-            <build engine="html" enabled="true" output="html">
-                <template dir="${phpDox.home}/templates/html" />
-                <file extension="xhtml" />
-            </build>
+         <build engine="html" enabled="true" output="html">
+            <template dir="${phpDox.home}/templates/html" />
+            <file extension="xhtml" />
+         </build>
 
-            <build engine="xml" enabled="true" output="xml" />
+         <build engine="xml" enabled="true" output="xml" />
 
-        </generator>
-    </project>
+      </generator>
+   </project>
 </phpdox>
 
