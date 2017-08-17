@@ -218,7 +218,9 @@
    <target name="phpmetrics" unless="phpmetrics.done" depends="prepare" description="Generate various metrics about PHP projects using phpmetrics">
       <exec executable="${phpmetrics}" taskname="phpmetrics">
          <arg line="--report-html=${basedir}/build/phpmetrics
-                    --report-violations=${basedir}/build/logs/violations.xml 
+                    --report-violations=${basedir}/build/logs/violations.xml
+                    --junit=${basedir}/build/logs/junit.xml
+                    --git
                     ${basedir}/src" />
       </exec>
 
