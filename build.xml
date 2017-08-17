@@ -12,11 +12,11 @@
    <property name="phpcb" value="${basedir}/vendor/bin/phpcb.bat" />
    <property name="phpmetrics" value="${basedir}/vendor/bin/phpmetrics.bat" />
 
-   <target name="build" depends="static-analysis,phpunit,phpdox,phpcb,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
+   <target name="build" depends="static-analysis,phpunit,phpmetrics,phpdox,phpcb,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
 
    <target name="quick-build" depends="lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)" />
 
-   <target name="static-analysis" depends="lint,pdepend,phpmetrics,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci" description="Performs static analysis" />
+   <target name="static-analysis" depends="lint,pdepend,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci" description="Performs static analysis" />
 
    <target name="clean" unless="clean.done" description="Cleanup build artifacts">
       <delete dir="${basedir}/build/coverage" />
@@ -220,7 +220,6 @@
          <arg line="--report-html=${basedir}/build/phpmetrics
                     --report-violations=${basedir}/build/logs/violations.xml
                     --junit=${basedir}/build/logs/junit.xml
-                    --git
                     ${basedir}/src" />
       </exec>
 
