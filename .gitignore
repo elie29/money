@@ -6,6 +6,7 @@ build/pdepend
 build/phpdox
 build/testdox
 build/phpcb
+build/phpmetrics
 cache.properties
 .idea
 /.settings/
