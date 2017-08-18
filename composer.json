@@ -19,6 +19,7 @@
 	"autoload": {
 		"classmap": [
 			"src/",
+			"tests/",
 			"vendor/"
 		],
 		"exclude-from-classmap": [

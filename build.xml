@@ -11,6 +11,8 @@
    <property name="phpdox" value="${basedir}/vendor/bin/phpdox.bat" />
    <property name="phpcb" value="${basedir}/vendor/bin/phpcb.bat" />
    <property name="phpmetrics" value="${basedir}/vendor/bin/phpmetrics.bat" />
+   <!-- phpstan needs php7+ and composer require phpstan/phpstan -->
+   <property name="phpstan" value="${basedir}/vendor/bin/phpstan.bat" />
 
    <target name="build" depends="static-analysis,phpunit,phpmetrics,phpdox,phpcb,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
 
@@ -224,6 +226,15 @@
       </exec>
 
       <property name="phpmetrics.done" value="true" />
+   </target>
+
+   <target name="phpstan" unless="phpstan.done" depends="prepare" description="PHP Static Analysis Tool - discover bugs in your code without running it">
+      <exec executable="${phpstan}" taskname="phpstan">
+         <arg line="analyse --no-progress --errorFormat=checkstyle
+            ${basedir}/src  ${basedir}/tests > ${basedir}/build/logs/phpstan.xml"/>
+      </exec>
+
+      <property name="phpstan.done" value="true" />
    </target>
 
    <target name="-check-failure">
