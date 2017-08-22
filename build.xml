@@ -209,9 +209,9 @@
 
    <target name="phpcb" unless="phpcb.done" depends="prepare" description="Generate a code browser using phpcb">
       <exec executable="${phpcb}" taskname="phpcb">
-         <arg line="--log ${basedir}/build/logs
-                    --output ${basedir}/build/phpcb
-                    --source ${basedir}/src" />
+         <arg line="--log=${basedir}/build/logs
+                    --output=${basedir}/build/phpcb
+                    --source=${basedir}/src" />
       </exec>
 
       <property name="phpcb.done" value="true" />
