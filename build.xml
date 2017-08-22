@@ -14,7 +14,7 @@
    <!-- phpstan needs php7+ and composer require phpstan/phpstan -->
    <property name="phpstan" value="${basedir}/vendor/bin/phpstan.bat" />
 
-   <target name="build" depends="static-analysis,phpunit,phpmetrics,phpdox,phpcb,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
+   <target name="build" depends="static-analysis,phpunit,phpcb,phpmetrics,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
 
    <target name="quick-build" depends="lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)" />
 
@@ -209,9 +209,9 @@
 
    <target name="phpcb" unless="phpcb.done" depends="prepare" description="Generate a code browser using phpcb">
       <exec executable="${phpcb}" taskname="phpcb">
-         <arg line="--log=${basedir}/build/logs
-                    --output=${basedir}/build/phpcb
-                    --source=${basedir}/src" />
+         <arg line="--log ${basedir}/build/logs
+                    --source ${basedir}/src/
+                    --output ${basedir}/build/phpcb" />
       </exec>
 
       <property name="phpcb.done" value="true" />
