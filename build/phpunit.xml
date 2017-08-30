@@ -9,7 +9,8 @@
    beStrictAboutTestsThatDoNotTestAnything="true"
    beStrictAboutTodoAnnotatedTests="true"
    forceCoversAnnotation="true"
-   verbose="true">
+   verbose="true"
+   colors="true">
 
    <testsuite name="Money">
       <directory suffix="Test.php">../tests</directory>
