@@ -19,8 +19,7 @@
 	"autoload": {
 		"classmap": [
 			"src/",
-			"tests/",
-			"vendor/"
+			"tests/"
 		],
 		"exclude-from-classmap": [
 			"src/autoload.php"
