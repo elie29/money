@@ -14,6 +14,7 @@
    <!-- phpstan needs php7+ and composer require phpstan/phpstan -->
    <property name="phpstan" value="${basedir}/vendor/bin/phpstan.bat" />
 
+   <!-- phpcb should be called after static-analysis and phpunit coverage -->
    <target name="build" depends="static-analysis,phpunit,phpcb,phpmetrics,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation" />
 
    <target name="quick-build" depends="lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)" />
